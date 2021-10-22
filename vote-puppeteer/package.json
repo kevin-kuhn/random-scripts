@@ -1,0 +1,15 @@
+{
+  "name": "vote-puppeteer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "nodemon": "^2.0.14",
+    "puppeteer": "^10.4.0",
+    "puppeteer-core": "^10.4.0"
+  },
+  "scripts": {
+		"start": "node index.js",
+    "dev": "nodemon "
+  }
+}
