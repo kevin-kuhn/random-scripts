@@ -20,7 +20,7 @@ floodar("oi")
 
 function enviarScript(scriptText) {
     var allText = scriptText;
-    lines = allText.split("\n");
+    var lines = allText.split("\n");
 
     var i = 0;
     function myLoop() {
@@ -28,20 +28,21 @@ function enviarScript(scriptText) {
             if (lines[i].trim() != "") {
                 console.log(lines[i]);
 
-                window.InputEvent = window.Event || window.InputEvent;
-
-                var event = new InputEvent('input', {
-                    bubbles: true
-                });
-
-                var textbox = document.querySelector('div._2_1wd[data-tab="6"]')
+                var textbox = document.querySelector('#main > footer > div._2lSWV._3cjY2.copyable-area > div > span:nth-child(2) > div > div._1VZX7 > div._3Uu1_');
+                textbox.focus(); // Focus on the textbox
 
                 textbox.textContent = lines[i];
+                textbox.dispatchEvent(new InputEvent('input', { bubbles: true }));
 
-                textbox.dispatchEvent(event);
-
-                document.querySelector("button._1E0Oz").click();
-
+                // Dispatching 'keydown' event for Enter key
+                textbox.dispatchEvent(new KeyboardEvent('keydown', {
+                    key: 'Enter',
+                    code: 'Enter',
+                    keyCode: 13,
+                    which: 13,
+                    bubbles: true, // Ensuring the event bubbles up
+                    cancelable: true, // Making the event cancelable
+                }));
             }
             i++;
             if (i < lines.length) {
