@@ -25,7 +25,7 @@ const scrape = async () => {
 
 	await delay(3000)
 
-	await page.click("#form-submit-vote > button")
+	await page.click("#form-submit-vote > button") 
 
 	await page.waitForNavigation();
 
